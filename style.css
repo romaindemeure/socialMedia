@@ -1,0 +1,305 @@
+*, *::before, *::after {
+	box-sizing: border-box;
+}
+
+body {
+	background: #F1F1F1;
+	font-family: Roboto, sans-serif;
+	font-size: 14px;
+	color: rgba(0, 0, 0, 0.6);
+	margin: 0;
+	line-height: 1.3;
+}
+
+a {
+	color: inherit;
+}
+
+/* style du Header */
+.topbar {
+	background: #2C3E50;
+	color: #FFF;
+}
+
+.topbar a {
+	text-decoration: none;
+}
+
+
+.topbarLogo {
+	display: block;
+	font-size: 24px;
+	line-height: 54px;
+	text-align: center;
+	padding: 11px 0;
+}
+
+.topbarNav {
+	text-align: center;
+	padding-bottom: 16px;
+}
+
+.topbarNav a {
+	color: rgba(255, 255, 255, 0.67);
+	display: inline-block;
+	margin: 0 12px;
+	transition: color .3s;
+}
+
+.topbarNav a:hover {
+	color: #FFF;
+}
+
+
+@media only screen and (min-width: 600px) {
+	.topbar {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		height: 64px;
+		padding: 0 25px;
+	}
+	.topbarLogo, .topbarNav {
+		padding: 0;
+	}
+	.topbarNav a {
+		margin: 0 20px;
+	}
+}
+
+/* Style du container */
+
+.container {
+	padding: 0 15px;
+	max-width: 1080px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+/* Style sidebar */
+.sidebar {
+	display: flex;
+	flex-wrap: wrap;
+	margin-bottom: 20px;
+}
+
+.sidebar a {
+	display: block;
+	width: 50%;
+	text-decoration: none;
+	padding: 0.6em 0;
+	transition: .3s;
+	border: solid 1px transparent;
+	padding-left: 10px;
+}
+
+.sidebar a::before {
+	content: '';
+	display: inline-block;
+	width: 15px;
+	height: 15px;
+	vertical-align: middle;
+	margin-top: -2px;
+	margin-right: 20px;
+	opacity: .67;
+	background: url(img/home.svg) center center / contain no-repeat;
+	transition: opacity .3s;
+}
+
+.sidebar a:hover {
+	color: black;
+	border: solid 1px #DBDBDB;
+	background: #FFF;
+	border-radius: 3px;
+	font-weight: bold;
+}
+
+.sidebar a:hover::before {
+	opacity: 1;
+}
+
+.sidebar .sidebarMessages::before {
+	background-image: url(img/messages.svg);
+}
+
+.sidebar .sidebarEvenements::before {
+	background-image: url(img/calendar.svg);
+}
+
+.sidebar .sidebarGroupes::before {
+	background-image: url(img/group.svg);
+}
+
+.sidebar .sidebarGroupes::before {
+	background-image: url(img/group.svg);
+}
+
+@media only screen and (min-width: 950px) {
+	.container{
+		display: flex;
+	}
+	.sidebar{
+		flex-direction: column;
+		flex: none;
+		width: 180px;
+	}
+	.sidebar a {
+		width: 100%;
+	}
+	.main {
+		width: 100%;
+		margin-left: 30px;
+		margin-right: 30px;
+	}
+	.aside {
+		flex: none;
+		width: 310px;
+	}
+}
+
+/* Style du container main */
+.card {
+	border: solid 1px #DBDBDB;
+	background: #FFF;
+	border-radius: 3px;
+	margin: 10px 0;
+}
+
+.card a{
+	text-decoration: none;
+}
+
+.cardHeader {
+	padding: 10px;
+	position: relative;
+}
+
+.cardHeaderAvatar {
+	padding-left: 65px;
+}
+
+.cardAvatar {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	left: 10px;
+}
+
+.cartTitle {
+	font-weight: bold;
+	color: black;
+	font-size: 18px;
+	margin: 5px 0;
+}
+
+.cardDate {
+	color: rgba(0, 0, 0, 0.38);
+	font-size: 12px ;
+}
+
+.cardBody {
+	padding: 0 10px;
+}
+
+.cardBody p {
+	padding: 10px 0;
+}
+
+.cardBody .fullwidth {
+	width: calc(100% + 20px);
+	display: block;
+	margin-left: -10px;
+	margin-right: -10px;
+}
+
+.cardFooter {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-top: solid 1px #DBDBDB;
+	background: #FBFBFB;
+	padding: 10px;
+	font-size: 12px;
+	color: #BDBDBD;
+	height: 45px;
+}
+
+.cardLike::before {
+	content: '';
+	display: inline-block;
+	vertical-align: middle;
+	margin-right: 5px;
+	height: 20px;
+	width: 20px;
+	background: url(img/like.svg) center center / 20px 20px no-repeat;
+}
+
+.cardLike:hover {
+	color: black;
+	cursor: pointer;
+}
+
+.cardComments::before {
+	content: '';
+	display: inline-block;
+	vertical-align: middle;
+	margin-right: 5px;
+	height: 20px;
+	width: 18px;
+	background: url(img/comment.svg) center center / 20px 18px no-repeat;
+}
+
+.cardComments:hover {
+	color: black;
+	cursor: pointer;
+}
+/* Style du aside */
+
+/* .aside {
+	background: lightblue;
+} */
+.aside .suggestionTitle {
+	font-size: 18px;
+	color: black;
+	font-weight: bold;
+}
+
+.aside hr {
+	color: black;
+}
+
+.aside .nameSuggestion {
+	font-size: 15px;
+	color: black;
+	font-weight: bold;
+}
+
+.suggestionFriends {
+	display: flex;
+	margin: 10px 0;
+}
+
+.nameSuggestion{
+	padding-bottom: 5px;
+}
+
+.addFriend{
+	padding-top: 25px;
+	color: black;
+}
+
+.suggestionImg {
+	width: 80px;
+}
+
+.suggestion {
+	width: auto;
+	margin-left: 10px;
+}
+
+.suggestionImg {
+	display: inline-block;
+	vertical-align: middle;
+}
